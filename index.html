@@ -1,94 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Design</title>
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    
-    <div class="sidebar bg-white border-right">
-        <div class="logo text-center py-3">
-            <img src="images/logo.png" alt="">
-            <p class="ml-2 mb-0">Untlip</p>
-        </div>
-        <ul class="menu list-unstyled">
-            <li>
-                <a href="#" class="d-block py-2 pl-3">
-                    <i class="fas fa-tachometer-alt mr-2"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="d-block py-2 pl-3 active">
-                    <i class="fas fa-shopping-cart mr-2"></i>
-                    <span>Orders</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="d-block py-2 pl-3" >
-                    <i class="fas fa-users mr-2"></i>
-                    <span>Clients</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="d-block py-2 pl-3">
-                    <i class="fas fa-chart-bar mr-2"></i>
-                    <span>Statistics</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="d-block py-2 pl-3">
-                    <i class="fas fa-money-bill mr-2"></i> 
-                    <span>Finance</span>
-                </a>
-            </li>
-            <li>
-                <a href="" class="d-block py-2 pl-3" >
-                    <i class="fas fa-question-circle mr-2"></i>
-                    <span>FAQ</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="d-block py-2 pl-3">
-                    <i class="fas fa-headset mr-2"></i> 
-                    <span>Support</span>
-                </a>
-            </li>
-            <li class="logout">
-                <a href="#" class="d-block py-2 pl-3">
-                    <i class="fas fa-sign-out-alt mr-2"></i>
-                    <span>Logout</span>
-                </a>
-            </li>
-        </ul>
-        <div class="upgrade-section">
-            <div class="logo text-center py-3">
-                <img src="images/boy.png" alt="">
-            </div>
-            <div class="logo text-center py-3">
-                <a href="#" class="d-block" data-tab="logo">
-                    <span>Upgrade</span><br>
-                    <span>your plans<i class="fas fa-arrow-right"></i></span>
-                </a>
-            </div>
-        </div>
-    </div>
-
     <div class="container-fluid">
-        <div class="row">
-            
-                <div class="header--wrapper">
+        <div class="row" id="row">
+            <div class="col-lg-3 col-md-4 d-none d-md-block ">
+                <div class="sidebar bg-white border-right">
+                    <div class="logo text-center py-3">
+                        <img src="images/logo.png" alt="">
+                        <p class="ml-2 mb-0">Untlip</p>
+                    </div> 
+                    <ul class="menu list-unstyled">
+                        <li>
+                            <a 
+                            href="#" class="d-block py-2 pl-3" data-toggle="tab" data-target="dashboard-content" >
+                                <i class="fas fa-tachometer-alt mr-2"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="d-block py-2 pl-3" data-toggle="tab" data-target="orders-content">
+                                <i class="fas fa-shopping-cart mr-2"></i> 
+                                <span>Orders</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="d-block py-2 pl-3" data-toggle="tab" data-target="client-content" >
+                                <i class="fas fa-users mr-2"></i> 
+                                <span>Clients</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="d-block py-2 pl-3" data-toggle="tab" data-target="statistics-content">
+                                <i class="fas fa-chart-bar mr-2"></i>
+                                <span>Statistics</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="d-block py-2 pl-3" data-toggle="tab" data-target="finance-content">
+                                <i class="fas fa-money-bill mr-2"></i> 
+                                <span>Finance</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="d-block py-2 pl-3" data-toggle="tab" data-target="faq-content">
+                                <i class="fas fa-question-circle mr-2"></i>
+                                <span>FAQ</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="d-block py-2 pl-3" data-toggle="tab" data-target="support-content">
+                                <i class="fas fa-headset mr-2"></i> 
+                                <span>Support</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="upgrade-section">
+                        <div class="logo text-center py-3">
+                            <img src="images/boy.png" alt="">
+                        </div>
+                        <div class="logo text-center py-3">
+                            <a href="#" class="d-block" data-tab="logo">
+                                <span>Upgrade</span><br>
+                                <span>your plans<i class="fas fa-arrow-right"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="col-lg-9">
+                <div class="header--wrapper ml-auto">
+                    <div class="sidebar-mobile d-md-none">
+                        <a href="#" class="menu-toggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></a>
+                        <div class="dropdown-menu transparentbar ">
+                            <div class="sidebar transparentbar">
+                                <div class="logo text-center py-3">
+                                    <img src="images/logo.png" alt="">
+                                    <p class="ml-2 mb-0">Untlip</p>
+                                </div>
+                                <ul class="menu list-unstyled">
+                                    <li>
+                                        <a 
+                                        href="#" class="d-block py-2 pl-3"data-target="dashboard-content" >
+                                            <i class="fas fa-tachometer-alt mr-2"></i>
+                                            <span>Dashboard</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-block py-2 pl-3" data-target="orders-content">
+                                            <i class="fas fa-shopping-cart mr-2"></i> 
+                                            <span>Orders</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-block py-2 pl-3" data-target="client-content" >
+                                            <i class="fas fa-users mr-2"></i> 
+                                            <span>Clients</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-block py-2 pl-3" data-target="statistics-content">
+                                            <i class="fas fa-chart-bar mr-2"></i>
+                                            <span>Statistics</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-block py-2 pl-3" data-target="finance-content">
+                                            <i class="fas fa-money-bill mr-2"></i> 
+                                            <span>Finance</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-block py-2 pl-3" data-target="faq-content">
+                                            <i class="fas fa-question-circle mr-2"></i>
+                                            <span>FAQ</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-block py-2 pl-3" data-target="support-content">
+                                            <i class="fas fa-headset mr-2"></i> 
+                                            <span>Support</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- <div class="upgrade-section">
+                                    <div class="logo text-center py-3">
+                                        <img src="images/boy.png" alt="">
+                                    </div>
+                                    <div class="logo text-center py-3">
+                                        <a href="#" class="d-block" data-tab="logo">
+                                            <span>Upgrade</span><br>
+                                            <span>your plans<i class="fas fa-arrow-right"></i></span>
+                                        </a>
+                                    </div>
+                                </div> -->
+                            </div>
+                            
+                        </div>
+                    </div>
                     <div class="header--title">
                         <i class="far fa-calendar-alt"></i>
-                        <span>20 Feb 2024</span>
+                        <span id="current-date"></span>
                     </div>
                     <div class="user--info">
                         <div class="search--box">
@@ -97,165 +159,265 @@
                         </div>
                         <i class="fas fa-bell"></i> 
                         <span>|</span>
-                        <img src="images/profile.png" alt="">
+                        <div class="profile-toggle">
+                            <img src="images/profile.png" alt="" id="profile-toggle">
+                            <div class="profile-dropdown" id="profile-dropdown">
+                                <div class="profile-details">
+                                    <img src="images/profile.png" alt="">
+                                    <p>Tushar Chaudhari</p>
+                                </div>
+                                <div class="profile-actions">
+                                    <a href="#" id="view-profile"><i class="fas fa-user-circle"></i> View Profile</a>
+                                    <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-        </div>
+                <div class="col-12 main--content bg-white" id="dashboard-content" >
+                    <div class="container mt-5">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand bold" href="#"> <h2>Dashboard😍</h2></a>
+                        </nav>
+                    </div> 
+                </div>
+                <div class="col-12 main--content bg-white" id="client-content" >
+                    <div class="container mt-5">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand bold" href="#"> <h2>Client😍</h2></a>
+                        </nav>
+                    </div> 
+                </div>
+                <div class="col-12 main--content bg-white" id="statistics-content" >
+                    <div class="container mt-5">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand bold" href="#"> <h2>Statistics😍</h2></a>
+                        </nav>
+                    </div> 
+                </div>
+                <div class="col-12 main--content bg-white" id="finance-content" >
+                    <div class="container mt-5">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand bold" href="#"> <h2>Finance😍</h2></a>
+                        </nav>
+                    </div> 
+                </div>
+                <div class="col-12 main--content bg-white" id="faq-content" >
+                    <div class="container mt-5">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand bold" href="#"> <h2>FAQ😍</h2></a>
+                        </nav>
+                    </div> 
+                </div> 
+                <div class="col-12 main--content bg-white" id="support-content" >
+                    <div class="container mt-5">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand bold" href="#"> <h2>Support😍</h2></a>
+                        </nav>
+                    </div> 
+                </div> 
 
-        <div class="col-12 main--content bg-white" >
-            <div class="container mt-5">
-                <nav class="navbar navbar-expand-lg">
-                    <a class="navbar-brand bold" href="#"> <h2>Orders😍</h2></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item" >
-                                <a class="nav-link active" href="#">Daily</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Monthly</a>
-                            </li>
-                        </ul>
+                <div class="main--content bg-white" id="orders-content">
+                    <div class="container mt-5">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand bold" href="#"><h2>Orders😍</h2></a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link toggle-btn" id="daily-btn" href="#">Daily</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link toggle-btn" id="monthly-btn" href="#">Monthly</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
                     </div>
-                </nav>
-            </div>
-            
-            
-            
-            <div class="container mt-5">
-                <div class="row">
-                    <div class="col">
-                        
-                        <div class="card light-blue">
-                            <div class="card-header">New Orders</div>
-                            <div class="card-body">
-                                <p><span>245</span>     | Impression - 20% <i class="fas fa-arrow-up"></i></p>
+
+
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card light-blue">
+                                    <div class="card-header">New Orders</div>
+                                    <div class="card-body">
+                                        <p><span>245</span> | Impression - 20% <i class="fas fa-arrow-up"></i></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card light-purple">
+                                    <div class="card-header">Delivered Orders</div>
+                                    <div class="card-body">
+                                        <p><span>123</span> | Impression - 11% <i class="fas fa-arrow-up "></i></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card light-orange">
+                                    <div class="card-header">Pending Orders</div>
+                                    <div class="card-body">
+                                        <p><span>150</span> | Impression - 18% <i class="fas fa-arrow-down"></i></p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        
-                        <div class="card light-purple">
-                            <div class="card-header">Delivered Orders</div>
-                            <div class="card-body">
-                                <p><span>123</span>     | Impression - 11%  <i class="fas fa-arrow-up "></i></p>
-                            </div>
+
+    
+
+                    <div class="container mt-5">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="nav nav-tabs justify-content-between">
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#" data-target="allorders">All Orders</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#" data-target="pendingorders">Pending Orders</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#" data-target="deliveredorders">Delivered Orders</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#" data-target="bookedorders">Booked Orders</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#" data-target="cancelledorders">Cancelled Orders</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="col">
-                        
-                        <div class="card light-orange">
-                            <div class="card-header">Pending Orders</div>
-                            <div class="card-body">
-                                <p><span>150</span>     | Impression - 18%  <i class="fas fa-arrow-down"></i></p>
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="d-flex justify-content-between">
+                                    <div class="tab-pane table-responsive" id="allorders">
+                                        <table class="table mt-3">
+                                            <thead>
+                                                <tr>
+                                                    <th><i class="fas fa-id-card"></i> Order ID <i class="fas fa-sort"></i></th>
+                                                    <th><i class="far fa-calendar-alt"></i> Ordered Date <i class="fas fa-sort"></i></th>
+                                                    <th><i class="fas fa-box"></i> Product Name <i class="fas fa-sort"></i></th>
+                                                    <th><i class="fas fa-dollar-sign"></i> Product Price <i class="fas fa-sort"></i></th>
+                                                    <th><i class="fas fa-check-circle"></i> Status <i class="fas fa-sort"></i></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>#789245</td>
+                                                    <td>14-12-2020</td>
+                                                    <td>Decorative box</td>
+                                                    <td>120 USD</td>
+                                                    <td><i class="far fa-check-circle"></i>Delivered</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>#123245</td>
+                                                    <td>12-12-2020</td>
+                                                    <td>Camera film</td>
+                                                    <td>156 USD</td>
+                                                    <td><i class="fa-regular fa-circle-xmark"></i>Cancelled</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>#273245</td>
+                                                    <td>15-11-2020</td>
+                                                    <td>Decorative box</td>
+                                                    <td>350 USD</td>
+                                                    <td><i class="far fa-check-circle"></i>Delivered</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>#28745</td>
+                                                    <td>17-11-2020</td>
+                                                    <td>Decorative box</td>
+                                                    <td>200 USD</td>
+                                                    <td><i class="far fa-check-circle"></i>Delivered</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>#287645</td>
+                                                    <td>18-11-2020</td>
+                                                    <td>Decorative box</td>
+                                                    <td>129 USD</td>
+                                                    <td><i class="fa-regular fa-clock"></i>Pending</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>#289945</td>
+                                                    <td>19-11-2020</td>
+                                                    <td>Decorative box</td>
+                                                    <td>157 USD</td>
+                                                    <td><i class="far fa-check-circle"></i>Delivered</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="tab-pane table-responsive" id="pendingorders">
+                                        <table class="table mt-3">
+                                            <thead>
+                                                <tr>
+                                                    <th><i class="fas fa-id-card"></i> Order ID <i class="fas fa-sort"></i></th>
+                                                    <th><i class="far fa-calendar-alt"></i> Ordered Date <i class="fas fa-sort"></i></th>
+                                                    <th><i class="fas fa-box"></i> Product Name <i class="fas fa-sort"></i></th>
+                                                    <th><i class="fas fa-dollar-sign"></i> Product Price <i class="fas fa-sort"></i></th>
+                                                    <th><i class="fas fa-check-circle"></i> Status <i class="fas fa-sort"></i></th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div class="tab-pane table-responsive" id="deliveredorders">
+                                        <table class="table mt-3">
+                                            <thead>
+                                                <tr>
+                                                    <th><i class="fas fa-id-card"></i> Order ID <i class="fas fa-sort"></i></th>
+                                                    <th><i class="far fa-calendar-alt"></i> Ordered Date <i class="fas fa-sort"></i></th>
+                                                    <th><i class="fas fa-box"></i> Product Name <i class="fas fa-sort"></i></th>
+                                                    <th><i class="fas fa-dollar-sign"></i> Product Price <i class="fas fa-sort"></i></th>
+                                                    <th><i class="fas fa-check-circle"></i> Status <i class="fas fa-sort"></i></th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div class="tab-pane table-responsive" id="bookedorders">
+                                        <table class="table mt-3">
+                                            <thead>
+                                                <tr>
+                                                    <th><i class="fas fa-id-card"></i> Order ID <i class="fas fa-sort"></i></th>
+                                                    <th><i class="far fa-calendar-alt"></i> Ordered Date <i class="fas fa-sort"></i></th>
+                                                    <th><i class="fas fa-box"></i> Product Name <i class="fas fa-sort"></i></th>
+                                                    <th><i class="fas fa-dollar-sign"></i> Product Price <i class="fas fa-sort"></i></th>
+                                                    <th><i class="fas fa-check-circle"></i> Status <i class="fas fa-sort"></i></th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div class="tab-pane table-responsive" id="cancelledorders">
+                                        <table class="table mt-3">
+                                            <thead>
+                                                <tr>
+                                                    <th><i class="fas fa-id-card"></i> Order ID <i class="fas fa-sort"></i></th>
+                                                    <th><i class="far fa-calendar-alt"></i> Ordered Date <i class="fas fa-sort"></i></th>
+                                                    <th><i class="fas fa-box"></i> Product Name <i class="fas fa-sort"></i></th>
+                                                    <th><i class="fas fa-dollar-sign"></i> Product Price <i class="fas fa-sort"></i></th>
+                                                    <th><i class="fas fa-check-circle"></i> Status <i class="fas fa-sort"></i></th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>                        
+                    </div>  
                 </div>
-            </div>
-            
-            
-            <div class="container mt-5">
-                
-                <ul class="nav nav-tabs justify-content-between">
-                    <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#allOrdersTab">All Orders</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link"  data-toggle="tab" href="#pendingOrdersTab">Pending Orders</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#deliveredOrdersTab">Delivered Orders</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#bookedOrdersTab">Booked Orders</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#cancelledOrdersTab">Cancelled Orders</a>
-                    </li>
-                </ul>
-            </div>
-            
-            
-            <div class="container mt-5">
-                <div class="d-flex justify-content-between">
-                    
-                    <div class="tab-pane">
-                        
-                        <table class="table mt-3">
-                            <thead>
-                                <tr>
-                                    <th><i class="fas fa-id-card"></i> Order ID</th>
-                                    <th><i class="far fa-calendar-alt"></i> Ordered Date</th>
-                                    <th><i class="fas fa-box"></i> Product Name</th>
-                                    <th><i class="fas fa-dollar-sign"></i> Product Price</th>
-                                    <th><i class="fas fa-check-circle"></i> Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>#789245</td>
-                                    <td>14-12-2020</td>
-                                    <td>Decorative box</td>
-                                    <td>120 USD</td>
-                                    <td><i class="far fa-check-circle"></i>Delivered</td>
-                                </tr>
-                                <tr>
-                                    <td>#123245</td>
-                                    <td>12-12-2020</td>
-                                    <td>Camera film</td>
-                                    <td>156 USD</td>
-                                    <td><i class="fa-regular fa-circle-xmark"></i>Cancelled</td>
-                                </tr>
-                                <tr>
-                                    <td>#273245</td>
-                                    <td>11-11-2020</td>
-                                    <td>Decorative box</td>
-                                    <td>125 USD</td>
-                                    <td><i class="far fa-check-circle"></i>Delivered</td>
-                                </tr>
-                                <tr>
-                                    <td>#273245</td>
-                                    <td>11-11-2020</td>
-                                    <td>Decorative box</td>
-                                    <td>125 USD</td>
-                                    <td><i class="far fa-check-circle"></i>Delivered</td>
-                                </tr>
-                                <tr>
-                                    <td>#273245</td>
-                                    <td>11-11-2020</td>
-                                    <td>Decorative box</td>
-                                    <td>125 USD</td>
-                                    <td><i class="fa-regular fa-clock"></i>Pending</td>
-                                </tr>
-                                <tr>
-                                    <td>#273245</td>
-                                    <td>11-11-2020</td>
-                                    <td>Decorative box</td>
-                                    <td>125 USD</td>
-                                    <td><i class="far fa-check-circle"></i>Delivered</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
 
-
-    
-
-
-
-
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/orders.js"></script>
 </body>
-
 </html>
+
